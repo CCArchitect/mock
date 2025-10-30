@@ -6,14 +6,15 @@
 <title>ResolveAX Banner W850×H2000</title>
 <style>
   :root {
-    --w: 850px;
+    --w: 850px;       /* screen preview size */
     --h: 2000px;
     --brand-blue: #0070c9;
     --brand-dark: #0a2239;
     --white: #ffffff;
   }
-  body { margin: 0; background: #e9eef5; font-family: "Noto Sans JP", sans-serif; }
-  .banner { width: var(--w); height: var(--h); margin: 24px auto; position: relative; background: var(--white); color: var(--brand-dark); display: flex; flex-direction: column; overflow: hidden; }
+  /* ---- Screen (browser) ---- */
+  html, body { margin: 0; background: #e9eef5; font-family: "Noto Sans JP", sans-serif; }
+  .banner { width: var(--w); height: var(--h); min-height: var(--h); margin: 24px auto; position: relative; background: var(--white); color: var(--brand-dark); display: flex; flex-direction: column; overflow: hidden; }
 
   .header { text-align: center; padding: 20px 20px; background: var(--white); border-bottom: 4px solid var(--brand-blue); }
   .header img { height: 80px; }
@@ -29,6 +30,16 @@
   .footer { background: var(--brand-blue); padding: 60px 40px; display: flex; justify-content: center; align-items: center; color: var(--white); text-align: center; }
   .cta h4 { margin: 0 0 10px 0; font-size: 38px; font-weight: 900; letter-spacing: 0.02em; }
   .cta p { margin: 0; font-size: 22px; line-height: 1.6; }
+
+  /* ---- Print (Acrobat/Browser → PDF) ---- */
+  @media print {
+    /* Use physical units for banner printing (mm). */
+    @page { size: 850mm 2000mm; margin: 0; }
+    html, body { width: 850mm; height: 2000mm; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .banner { width: 850mm; height: 2000mm; min-height: 2000mm; margin: 0; overflow: hidden; break-after: avoid-page; break-before: avoid-page; }
+    .header { border-bottom: 4px solid #0070c9; }
+    .hero-overlay h1, .hero-overlay p, .hero-overlay .tag { text-shadow: none; } /* avoid double-render artifacts */
+  }
 </style>
 </head>
 <body>
