@@ -11,129 +11,102 @@
     --brand-blue: #0070c9;
     --brand-dark: #0a2239;
     --white: #ffffff;
+    --header-h: 140px; /* 固定 */
+    --footer-h: 220px; /* 固定 */
   }
 
-  html, body {
-    margin: 0;
-    background: #e9eef5;
-    font-family: "Noto Sans JP", sans-serif;
-  }
+  html, body { margin: 0; background: #e9eef5; font-family: "Noto Sans JP", sans-serif; }
 
-  /* ラップ全体を高さ固定に */
+  /* すべてブロックレイアウト（flex不使用）に変更 */
   .wrap {
     width: var(--w);
     height: var(--h);
     min-height: var(--h);
     margin: 0 auto;
     background: var(--white);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position: relative;
     overflow: hidden;
+    page-break-inside: avoid;
   }
 
-  .banner { flex: 1; display: flex; flex-direction: column; }
-
-  .header { text-align: center; padding: 20px 20px; background: var(--white); border-bottom: 4px solid var(--brand-blue); }
-  .header img { height: 80px; }
-
-  .hero-photo { position: relative; flex: 1; overflow: hidden; }
-  .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  .header {
+    height: var(--header-h);
+    line-height: var(--header-h);
     text-align: center;
-    color: var(--white);
-    padding: 120px 40px 180px;
+    background: var(--white);
+    border-bottom: 4px solid var(--brand-blue);
+  }
+  .header img { height: 80px; vertical-align: middle; }
+
+  /* 画像は背景画像に（object-fit回避） */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: calc(var(--h) - var(--header-h) - var(--footer-h));
+    background-image: url('https://s3.ap-northeast-1.amazonaws.com/media.cc-arc.com/GPT/AdobeStock_166957611.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  /* うっすら暗幕（文字の可読性） */
+  .hero::after{
+    content:"";
+    position:absolute; inset:0; background: rgba(0,0,0,0.25);
+  }
+  .hero-overlay{
+    position:absolute; inset:0; display:block; text-align:center; color:#fff;
+    padding: 120px 40px 180px; /* 上のキャッチ／下の説明にマージン */
+  }
+  .hero-overlay h1{
+    font-size: 64px; font-weight: 900; line-height: 1.25; margin: 0 0 20px; letter-spacing: .02em;
+    text-shadow: 0 0 14px rgba(0,0,0,.5);
+  }
+  .hero-overlay p{
+    font-size: 30px; line-height: 1.6; max-width: 740px; margin: 0 auto 20px;
+    text-shadow: 0 0 12px rgba(0,0,0,.5);
+  }
+  .hero-overlay .tag{
+    display:inline-block; font-size: 24px; font-weight: 700; letter-spacing: .06em;
+    background: rgba(255,255,255,.25); padding: 12px 30px; border-radius: 30px;
+    text-shadow: 0 0 8px rgba(0,0,0,.4);
   }
 
-  .hero-overlay h1 {
-    font-size: 64px;
-    font-weight: 900;
-    line-height: 1.25;
-    margin-bottom: 20px;
-    letter-spacing: 0.02em;
-    text-shadow: 0 0 14px rgba(0,0,0,0.6);
+  .footer{
+    width: 100%; height: var(--footer-h); background: var(--brand-blue); color:#fff;
+    text-align:center; display:block; padding: 40px 40px; box-sizing: border-box;
   }
+  .cta h4{ margin:0 0 10px 0; font-size:38px; font-weight:900; letter-spacing:.02em; }
+  .cta p{ margin:0; font-size:22px; line-height:1.6; }
 
-  .hero-overlay p {
-    font-size: 30px;
-    line-height: 1.6;
-    max-width: 740px;
-    margin: 0 auto 20px;
-    text-shadow: 0 0 12px rgba(0,0,0,0.6);
-  }
-
-  .hero-overlay .tag {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    background: rgba(255,255,255,0.25);
-    padding: 12px 30px;
-    border-radius: 30px;
-    display: inline-block;
-    text-shadow: 0 0 12px rgba(0,0,0,0.5);
-  }
-
-  .footer {
-    background: var(--brand-blue);
-    padding: 60px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    text-align: center;
-  }
-
-  .cta h4 {
-    margin: 0 0 10px 0;
-    font-size: 38px;
-    font-weight: 900;
-    letter-spacing: 0.02em;
-  }
-
-  .cta p {
-    margin: 0;
-    font-size: 22px;
-    line-height: 1.6;
-  }
-
-  /* PDF出力時にも高さ維持 */
-  @media print {
+  /* Acrobat/印刷用。物理サイズを固定し、ページ分割を抑制 */
+  @media print{
     @page { size: 850px 2000px; margin: 0; }
-    html, body, .wrap { width: 850px; height: 2000px; min-height: 2000px; margin: 0; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .wrap { break-after: avoid; break-before: avoid; }
+    html, body { width: 850px; height: 2000px; margin: 0; background:#fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .wrap { width: 850px; height: 2000px; min-height: 2000px; margin: 0; page-break-before: avoid; page-break-after: avoid; }
+    /* 背景を出力（Acrobatで出ない場合の保険） */
+    .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .hero-overlay h1, .hero-overlay p, .hero-overlay .tag { text-shadow: none; }
   }
 </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="banner">
-      <div class="header">
-        <img src="https://cyara.com/nitropack_static/nxaPoUkYczufGHoRRwwjmdemgjOazrte/assets/images/source/rev-32ce72e/cyara.com/wp-content/uploads/2020/07/cyara-logo.svg" alt="Cyara ロゴ">
-      </div>
+    <div class="header">
+      <img src="https://cyara.com/nitropack_static/nxaPoUkYczufGHoRRwwjmdemgjOazrte/assets/images/source/rev-32ce72e/cyara.com/wp-content/uploads/2020/07/cyara-logo.svg" alt="Cyara ロゴ" />
+    </div>
 
-      <div class="hero-photo">
-        <img src="https://s3.ap-northeast-1.amazonaws.com/media.cc-arc.com/GPT/AdobeStock_166957611.jpeg" alt="ResolveAX 管理者視点イメージ">
-        <div class="hero-overlay">
-          <h1>情報システム部が<br>在宅エージェント環境を<br>見える化</h1>
-          <div>
-            <p>これまで把握しづらかった在宅エージェントの<br>通信品質や端末状況を<br>リアルタイムに監視・分析・通知</p>
-            <div class="tag">対象：情シス／管理部門／センター長</div>
-          </div>
-        </div>
+    <div class="hero">
+      <div class="hero-overlay">
+        <h1>情報システム部が<br>在宅エージェント環境を<br>見える化</h1>
+        <p>これまで把握しづらかった在宅エージェントの<br>通信品質や端末状況を<br>リアルタイムに監視・分析・通知</p>
+        <div class="tag">対象：情シス／管理部門／センター長</div>
       </div>
+    </div>
 
-      <div class="footer">
-        <div class="cta">
-          <h4>ResolveAXで運用をスマートに</h4>
-          <p>通話品質・端末・ネットワークを一元監視し<br>システム部門の負担を軽減</p>
-        </div>
+    <div class="footer">
+      <div class="cta">
+        <h4>ResolveAXで運用をスマートに</h4>
+        <p>通話品質・端末・ネットワークを一元監視し<br>システム部門の負担を軽減</p>
       </div>
     </div>
   </div>
