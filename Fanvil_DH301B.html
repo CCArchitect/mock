@@ -42,11 +42,10 @@
   .badge{border:1px solid #e5e7eb;border-radius:999px;padding:.35em .7em;background:#fff;}
 
   /* ==== BOTTOM SECTION ==== */
-  .bottom{min-height:18%;padding:16px 6% 32px;background:#f4f6f8;border-top:1px solid #e5e7eb;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;} 
-  .logos{display:flex;gap:40px;align-items:center;justify-content:center;margin-bottom:14px;flex-wrap:wrap;}
-  .logo-tile{display:flex;align-items:center;justify-content:center;padding:6px 14px;border-radius:8px;box-shadow:0 0 0 1px #d5dbe3 inset;background:#ffffff}
-  .logo-bg{width:240px;height:56px;background-repeat:no-repeat;background-position:center;background-size:contain;}
-  .footnote{margin-top:0;color:#6b7280;font-size:12px;line-height:1.4;text-align:center;}
+  .bottom{min-height:18%;padding:16px 6% 32px;background:#f4f6f8;border-top:1px solid #e5e7eb;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;}
+  .logos{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;width:100%;}
+  .logos img{display:block;height:auto;max-height:48px;max-width:240px;object-fit:contain;border:0;background:transparent;}
+  .footnote{margin-top:8px;color:#6b7280;font-size:12px;line-height:1.4;text-align:center;}
 </style>
 </head>
 <body>
@@ -79,10 +78,8 @@
       </section>
       <footer class="bottom">
         <div class="logos">
-          <div class="logo-tile"><div class="logo-bg" style="background-image:url('https://s3.ap-northeast-1.amazonaws.com/media.cc-arc.com/GPT/linkvil.png');" aria-label="LINKVIL logo"></div></div>
-          <div class="logo-tile"><div class="logo-bg" style="background-image:url('https://fanvil.jp/wp-content/uploads/2024/06/Fanvil%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%83%AD%E3%82%B4-300x83.png');" aria-label="Fanvil logo"></div></div>
-        </div>
-          <div style="display:flex;align-items:center;justify-content:center;padding:6px 10px;background:#ffffff;border-radius:8px;box-shadow:0 0 0 1px #e5e7eb inset"><img src="https://fanvil.jp/wp-content/uploads/2024/06/Fanvil%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%83%AD%E3%82%B4-300x83.png" alt="Fanvil logo" loading="eager" decoding="sync" style="display:block;height:auto;max-height:56px;max-width:240px"/></div>
+          <img src="https://fanvil.jp/wp-content/uploads/2024/06/Fanvil%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%83%AD%E3%82%B4-300x83.png" alt="Fanvil logo">
+          <img src="https://s3.ap-northeast-1.amazonaws.com/media.cc-arc.com/GPT/linkvil.png" alt="LINKVIL logo">
         </div>
         <div class="footnote">Fanvil/CCアーキテクト · www.cc-arc.com / sales@cc-arc.co.jp</div>
       </footer>
