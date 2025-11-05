@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fanvil vs Grandstream｜営業バトルシート（A4横）</title>
+<title>Fanvil vs Grandstream｜営業バトルシート（A4縦）</title>
 <style>
   :root{
     --fanvil-red:#e60012;
@@ -15,37 +15,33 @@
     --warn:#b45309;
   }
   html,body{margin:0;background:#f6f7f9;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic","Noto Sans JP","Helvetica Neue",Arial,sans-serif;}
-  .page{width:1123px;min-height:794px;margin:24px auto;background:var(--bg);border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);overflow:hidden;}
-  .bar{height:10px;background:linear-gradient(90deg,var(--fanvil-red),#ff6b6b);} 
-  header{display:flex;align-items:center;justify-content:space-between;padding:24px 32px 12px 32px;}
+  .page{width:794px;min-height:1123px;margin:24px auto;background:var(--bg);border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);overflow:hidden;}
+  .bar{height:8px;background:linear-gradient(90deg,var(--fanvil-red),#ff6b6b);} 
+  header{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:20px 28px 8px 28px;}
   header .title h1{margin:0;font-size:26px;letter-spacing:.2px;}
   header .title p{margin:6px 0 0 0;color:var(--muted);font-size:15px;}
   .badge{display:inline-block;font-size:13px;padding:5px 12px;border-radius:999px;background:#fee2e2;color:#991b1b;margin-left:10px;font-weight:600}
-  .meta{display:flex;gap:12px;color:#6b7280;font-size:13px;}
-  .meta .dot::before{content:"• ";margin:0 6px;color:#9ca3af}
-  .wrap{padding:0 32px 28px 32px;}
-  .hero{display:grid;grid-template-columns:1.3fr .9fr;gap:20px;margin-top:8px;}
-  .hero .card{background:#fff;border:1px solid #eef0f3;border-radius:14px;padding:18px 20px}
-  .hero h2{margin:0 0 12px 0;font-size:18px}
+  .meta{display:flex;gap:12px;color:#6b7280;font-size:13px;margin-top:6px;}
+  .wrap{padding:0 28px 28px 28px;}
+  .hero{display:flex;flex-direction:column;gap:14px;margin-top:6px;}
+  .hero .card{background:#fff;border:1px solid #eef0f3;border-radius:14px;padding:16px 18px}
+  .hero h2{margin:0 0 10px 0;font-size:18px}
   .hero p{margin:6px 0;color:#374151;font-size:15px;line-height:1.7}
-  .kpi{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-  .kpi .pill{flex:1 1 180px;border:1px dashed #e5e7eb;border-radius:12px;padding:12px 14px;font-size:14px}
+  .kpi{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  .kpi .pill{flex:1 1 150px;border:1px dashed #e5e7eb;border-radius:12px;padding:10px 12px;font-size:14px}
   .kpi .pill b{color:var(--accent)}
-  table{width:100%;border-collapse:separate;border-spacing:0 10px;margin-top:14px}
-  thead th{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;text-align:left;padding:10px 12px}
+  table{width:100%;border-collapse:separate;border-spacing:0 8px;margin-top:12px}
+  thead th{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;text-align:left;padding:8px 10px}
   tbody tr{background:#fff;border:1px solid #eef0f3}
-  tbody td{padding:14px 12px;vertical-align:top;font-size:15px;line-height:1.6}
-  tbody tr:first-child td:first-child{border-top-left-radius:12px}
-  tbody tr:last-child td:last-child{border-bottom-right-radius:12px}
-  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
-  .gcard{background:#fff;border:1px solid #eef0f3;border-radius:12px;padding:14px}
-  .gcard h3{margin:0 0 8px 0;font-size:16px}
-  .gcard p{margin:5px 0;color:#374151;font-size:14px;line-height:1.7}
+  tbody td{padding:12px 10px;vertical-align:top;font-size:15px;line-height:1.6}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px}
+  .gcard{background:#fff;border:1px solid #eef0f3;border-radius:12px;padding:12px}
+  .gcard h3{margin:0 0 6px 0;font-size:16px}
+  .gcard p{margin:4px 0;color:#374151;font-size:14px;line-height:1.7}
   .green{color:var(--ok);font-weight:700}
-  .amber{color:var(--warn);font-weight:700}
-  footer{display:flex;justify-content:space-between;align-items:center;padding:16px 32px;border-top:1px solid #eef0f3;color:#6b7280;font-size:13px}
+  footer{display:flex;flex-direction:column;gap:4px;padding:14px 28px;border-top:1px solid #eef0f3;color:#6b7280;font-size:13px}
   footer .contact b{color:#111827}
-  @page{size:A4 landscape;margin:12mm}
+  @page{size:A4 portrait;margin:12mm}
   @media print{body{background:#fff}.page{width:auto;min-height:auto;margin:0;box-shadow:none;border-radius:0}.bar{height:6px}}
 </style>
 </head>
@@ -55,11 +51,11 @@
     <header>
       <div class="title">
         <h1>Fanvil vs Grandstream <span class="badge">営業バトルシート</span></h1>
-        <p>クラウドPBX・IP電話機導入提案向け｜社外配布可 Ver.1.6</p>
+        <p>クラウドPBX・IP電話機導入提案向け｜社外配布可 Ver.1.7</p>
       </div>
       <div class="meta">
         <div>作成: CCアーキテクト株式会社</div>
-        <div class="dot">2025-11-05</div>
+        <div>2025-11-05</div>
       </div>
     </header>
 
@@ -68,13 +64,8 @@
         <div class="card">
           <h2>サマリー</h2>
           <p>Grandstream（GS）はアジア・ラテンアメリカで価格競争に強みがある一方、先進国市場では品質・サポート・互換性の面で評価が伸び悩んでいます。Fanvilは同価格帯でより高品質・高互換性を提供し、<b>オフィス、PA（館内放送）、ヘルスケア、ホテル</b>といった日本の主要ユースケースで採用が拡大しています。</p>
-          <div class="kpi">
-            <div class="pill">主要ユースケース: <b>オフィス／PA／ヘルスケア／ホテル</b></div>
-            <div class="pill">RMA/サポート: <b>Fanvilが迅速</b></div>
-            <div class="pill">互換性（3CX等）: <b>Fanvilが強い</b></div>
-            <div class="pill">価格競争: <b>GSが主導（新興国）</b></div>
-          </div>
         </div>
+
         <div class="card">
           <h2>営業トーク要点</h2>
           <p>✅ <b>品質・安定性</b>：不良率が低く、RMA対応も速い。長期運用のTCOを抑制。</p>
@@ -85,16 +76,11 @@
         </div>
       </section>
 
-      <section style="margin-top:16px">
-        <h2 style="margin:0 0 10px 0;font-size:18px">主要比較表</h2>
+      <section style="margin-top:14px">
+        <h2 style="margin:0 0 8px 0;font-size:18px">主要比較表</h2>
         <table>
           <thead>
-            <tr>
-              <th>比較項目</th>
-              <th>Fanvil</th>
-              <th>Grandstream</th>
-              <th>営業トークポイント</th>
-            </tr>
+            <tr><th>比較項目</th><th>Fanvil</th><th>Grandstream</th><th>営業トークポイント</th></tr>
           </thead>
           <tbody>
             <tr><td><b>ブランドポジション</b></td><td>先進国含むグローバルで企業導入実績多数</td><td>アジア・南米中心。先進国では影響力低下</td><td>信頼性・長期安定供給で評価</td></tr>
@@ -109,8 +95,8 @@
         </table>
       </section>
 
-      <section style="margin-top:18px">
-        <h2 style="margin:0 0 10px 0;font-size:18px">主要ユースケース × 差別化ポイント</h2>
+      <section style="margin-top:16px">
+        <h2 style="margin:0 0 8px 0;font-size:18px">主要ユースケース × 差別化ポイント</h2>
         <div class="grid">
           <div class="gcard"><h3>オフィス</h3><p>V/X/Uシリーズの操作性・拡張モジュール、SIPホットスポット、内線・外線統合。</p><p class="green">→ 既設PBX〜クラウドPBX移行でも段階導入が容易。</p></div>
           <div class="gcard"><h3>PA（館内放送）</h3><p>SIPページング、IPスピーカー、非常放送連携。ドアホン・インターホンと統合。</p><p class="green">→ 受付〜倉庫まで一斉放送と双方向通話をシンプルに。</p></div>
@@ -119,9 +105,9 @@
         </div>
       </section>
 
-      <section style="margin-top:16px">
-        <h2 style="margin:0 0 10px 0;font-size:18px">クロージングトーク（現場用）</h2>
-        <ul style="margin:8px 0 0 20px;line-height:1.9;font-size:15px">
+      <section style="margin-top:14px">
+        <h2 style="margin:0 0 8px 0;font-size:18px">クロージングトーク（現場用）</h2>
+        <ul style="margin:6px 0 0 18px;line-height:1.8;font-size:15px">
           <li><b>「長く安定して使える前提」で選ぶならFanvilが安全</b>──RMA・互換性・国内支援で差が出ます。</li>
           <li><b>オフィス／PA／ヘルスケア／ホテル</b>の要件に最適──周辺機器までワンストップ提案。</li>
           <li><b>既存クラウドPBX（3CX等）との親和性</b>──置き換え・段階導入にも適します。</li>
