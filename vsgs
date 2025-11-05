@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fanvil vs Grandstream｜営業バトルシート（A4横）</title>
+<style>
+  :root{
+    --fanvil-red:#e60012;
+    --ink:#0b0c0e;
+    --muted:#6b7280;
+    --bg:#ffffff;
+    --accent:#111827;
+    --ok:#059669;
+    --warn:#b45309;
+  }
+  html,body{margin:0;background:#f6f7f9;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic","Noto Sans JP","Helvetica Neue",Arial,sans-serif;}
+  .page{width:1123px;min-height:794px;margin:24px auto;background:var(--bg);border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);overflow:hidden;}
+  .bar{height:10px;background:linear-gradient(90deg,var(--fanvil-red),#ff6b6b);} 
+  header{display:flex;align-items:center;justify-content:space-between;padding:24px 32px 12px 32px;}
+  header .title h1{margin:0;font-size:26px;letter-spacing:.2px;}
+  header .title p{margin:6px 0 0 0;color:var(--muted);font-size:15px;}
+  .badge{display:inline-block;font-size:13px;padding:5px 12px;border-radius:999px;background:#fee2e2;color:#991b1b;margin-left:10px;font-weight:600}
+  .meta{display:flex;gap:12px;color:#6b7280;font-size:13px;}
+  .meta .dot::before{content:"• ";margin:0 6px;color:#9ca3af}
+  .wrap{padding:0 32px 28px 32px;}
+  .hero{display:grid;grid-template-columns:1.3fr .9fr;gap:20px;margin-top:8px;}
+  .hero .card{background:#fff;border:1px solid #eef0f3;border-radius:14px;padding:18px 20px}
+  .hero h2{margin:0 0 12px 0;font-size:18px}
+  .hero p{margin:6px 0;color:#374151;font-size:15px;line-height:1.7}
+  .kpi{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+  .kpi .pill{flex:1 1 180px;border:1px dashed #e5e7eb;border-radius:12px;padding:12px 14px;font-size:14px}
+  .kpi .pill b{color:var(--accent)}
+  table{width:100%;border-collapse:separate;border-spacing:0 10px;margin-top:14px}
+  thead th{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#6b7280;text-align:left;padding:10px 12px}
+  tbody tr{background:#fff;border:1px solid #eef0f3}
+  tbody td{padding:14px 12px;vertical-align:top;font-size:15px;line-height:1.6}
+  tbody tr:first-child td:first-child{border-top-left-radius:12px}
+  tbody tr:last-child td:last-child{border-bottom-right-radius:12px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
+  .gcard{background:#fff;border:1px solid #eef0f3;border-radius:12px;padding:14px}
+  .gcard h3{margin:0 0 8px 0;font-size:16px}
+  .gcard p{margin:5px 0;color:#374151;font-size:14px;line-height:1.7}
+  .green{color:var(--ok);font-weight:700}
+  .amber{color:var(--warn);font-weight:700}
+  footer{display:flex;justify-content:space-between;align-items:center;padding:16px 32px;border-top:1px solid #eef0f3;color:#6b7280;font-size:13px}
+  footer .contact b{color:#111827}
+  @page{size:A4 landscape;margin:12mm}
+  @media print{body{background:#fff}.page{width:auto;min-height:auto;margin:0;box-shadow:none;border-radius:0}.bar{height:6px}}
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="bar"></div>
+    <header>
+      <div class="title">
+        <h1>Fanvil vs Grandstream <span class="badge">営業バトルシート</span></h1>
+        <p>クラウドPBX・IP電話機導入提案向け｜社外配布可 Ver.1.6</p>
+      </div>
+      <div class="meta">
+        <div>作成: CCアーキテクト株式会社</div>
+        <div class="dot">2025-11-05</div>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <section class="hero">
+        <div class="card">
+          <h2>サマリー</h2>
+          <p>Grandstream（GS）はアジア・ラテンアメリカで価格競争に強みがある一方、先進国市場では品質・サポート・互換性の面で評価が伸び悩んでいます。Fanvilは同価格帯でより高品質・高互換性を提供し、<b>オフィス、PA（館内放送）、ヘルスケア、ホテル</b>といった日本の主要ユースケースで採用が拡大しています。</p>
+          <div class="kpi">
+            <div class="pill">主要ユースケース: <b>オフィス／PA／ヘルスケア／ホテル</b></div>
+            <div class="pill">RMA/サポート: <b>Fanvilが迅速</b></div>
+            <div class="pill">互換性（3CX等）: <b>Fanvilが強い</b></div>
+            <div class="pill">価格競争: <b>GSが主導（新興国）</b></div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>営業トーク要点</h2>
+          <p>✅ <b>品質・安定性</b>：不良率が低く、RMA対応も速い。長期運用のTCOを抑制。</p>
+          <p>✅ <b>ユースケース適合</b>：オフィスは操作性、PAはSIPページング／IPスピーカー連携、ヘルスケアは病棟連絡・居室端末、ホテルはHシリーズの客室最適化。</p>
+          <p>✅ <b>互換性</b>：3CXや主要SIPプラットフォームで検証済。既設PBXからの段階移行に強い。</p>
+          <p>✅ <b>サポート</b>：国内代理店（CCアーキテクト）が<b>導入〜導入支援〜サポート</b>を日本語で対応。</p>
+          <p>✅ <b>流通安定性</b>：国内販売網として<b>プリンストン</b>経由の安定供給体制を確立。</p>
+        </div>
+      </section>
+
+      <section style="margin-top:16px">
+        <h2 style="margin:0 0 10px 0;font-size:18px">主要比較表</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>Fanvil</th>
+              <th>Grandstream</th>
+              <th>営業トークポイント</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><b>ブランドポジション</b></td><td>先進国含むグローバルで企業導入実績多数</td><td>アジア・南米中心。先進国では影響力低下</td><td>信頼性・長期安定供給で評価</td></tr>
+            <tr><td><b>製品品質／RMA</b></td><td>不良率0.2%未満、RMA対応迅速</td><td>RMA率高く対応遅延</td><td>品質とサポートスピードで差別化</td></tr>
+            <tr><td><b>音声品質</b></td><td>独自チューニングのHD Voice、ハードウェアエコーキャンセラ、広帯域マイクとスピーカー設計</td><td>HD Voice中心（音質レンジが狭い）</td><td>オフィス／会議室／病院など静粛性・明瞭度が重視される環境で高評価</td></tr>
+            <tr><td><b>互換性</b></td><td>3CX／BroadSoft／Metaswitchなどで実績</td><td>自社UCM依存</td><td>クラウドPBX連携に最適</td></tr>
+            <tr><td><b>管理システム</b></td><td>FDMCS（英語UI、TR-069/104対応）</td><td>GDMS（英語UI、制約あり）</td><td>国内SIでも扱いやすく、遠隔設定・監視が容易</td></tr>
+            <tr><td><b>ラインアップ</b></td><td>IP電話機・ドアホン・会議端末・IPスピーカー</td><td>PBX・ネットワーク機器が中心</td><td>周辺機器まで一気通貫提案可</td></tr>
+            <tr><td><b>価格レンジ</b></td><td>同等スペックで競争力</td><td>値下げ競争依存</td><td>品質維持とコスト最適化を両立</td></tr>
+            <tr><td><b>代理店体制（日本）</b></td><td>CCアーキテクト（直販・技術支援あり）＋ プリンストン（安定供給）</td><td>ダイワテクニカル（間接流通・小規模）</td><td>国内支援・供給網・技術力で差</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section style="margin-top:18px">
+        <h2 style="margin:0 0 10px 0;font-size:18px">主要ユースケース × 差別化ポイント</h2>
+        <div class="grid">
+          <div class="gcard"><h3>オフィス</h3><p>V/X/Uシリーズの操作性・拡張モジュール、SIPホットスポット、内線・外線統合。</p><p class="green">→ 既設PBX〜クラウドPBX移行でも段階導入が容易。</p></div>
+          <div class="gcard"><h3>PA（館内放送）</h3><p>SIPページング、IPスピーカー、非常放送連携。ドアホン・インターホンと統合。</p><p class="green">→ 受付〜倉庫まで一斉放送と双方向通話をシンプルに。</p></div>
+          <div class="gcard"><h3>ヘルスケア</h3><p>病棟・居室端末（例：Hシリーズ）、ナースステーション連携、非常呼出。</p><p class="green">→ 可用性・保守性を重視した設計で安心運用。</p></div>
+          <div class="gcard"><h3>ホテル</h3><p>客室電話（Hシリーズ）、フロント〜客室内線、清掃ステータス連携。</p><p class="green">→ PMS連携や多言語表示で体験向上。</p></div>
+        </div>
+      </section>
+
+      <section style="margin-top:16px">
+        <h2 style="margin:0 0 10px 0;font-size:18px">クロージングトーク（現場用）</h2>
+        <ul style="margin:8px 0 0 20px;line-height:1.9;font-size:15px">
+          <li><b>「長く安定して使える前提」で選ぶならFanvilが安全</b>──RMA・互換性・国内支援で差が出ます。</li>
+          <li><b>オフィス／PA／ヘルスケア／ホテル</b>の要件に最適──周辺機器までワンストップ提案。</li>
+          <li><b>既存クラウドPBX（3CX等）との親和性</b>──置き換え・段階導入にも適します。</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <div class="contact"><b>CCアーキテクト株式会社</b>｜〒104-0033 東京都中央区新川2-1-7 セルコンスクエア3F｜TEL 050-5830-7066｜sales@cc-arc.co.jp</div>
+      <div>© 2025 CC Architect Inc.</div>
+    </footer>
+  </div>
+</body>
+</html>
